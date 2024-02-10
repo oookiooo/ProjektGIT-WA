@@ -30,10 +30,20 @@ namespace Project1.Controllers
         [HttpGet("addCard")]
         public async Task AddCard()
         {
-            Cards cards = new Cards { CardId="1" ,NameCard = "test",Cost=12,AttackDamage=13,Hp=13 };
-                _context.Cards.Add(cards);
-                await _context.SaveChangesAsync();
-               
+            Cards card = new Cards
+            {
+                NameCard = "test",
+                Cost = 12,
+                AttackDamage = 13,
+                Hp = 13
+            };
+
+            // Dodawanie nowego obiektu card do DbSet<Cards> w kontekście bazy danych.
+            _context.Cards.Add(card);
+
+            // Zapisywanie zmian w bazie danych asynchronicznie.
+            await _context.SaveChangesAsync();
+
         }
     }
 }

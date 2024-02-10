@@ -6,7 +6,7 @@ namespace Project1.Models
     public class Cards
     {
         [Key]
-        public string CardId { get; set; }
+        public int CardId { get; set; }
 
        
         public string NameCard { get; set; }
