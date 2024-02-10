@@ -12,7 +12,7 @@ namespace Project1.Data.Migrations
                name: "Cards",
                columns: table => new
                {
-                   CardId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                   CardId = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
                    NameCard = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
                    Cost = table.Column<int>(type: "int", nullable: true),
                    AttackDamage = table.Column<int>(type: "int", nullable: true),
@@ -28,8 +28,8 @@ namespace Project1.Data.Migrations
                name: "Cards_Users",
                columns: table => new
                {
-                   CardsUsersId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                   CardId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                   CardsUsersId = table.Column<int>(type: "int", nullable: false).Annotation("SqlServer:Identity", "1, 1"),
+                   CardId = table.Column<int>(type: "int", nullable: false),
                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false)
 
                },

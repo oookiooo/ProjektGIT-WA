@@ -208,48 +208,7 @@ namespace Project1.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-            migrationBuilder.CreateTable(
-                name: "Cards",
-                columns: table => new
-                {
-                    CardId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NameCard = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
-                    Cost = table.Column<int>(type: "int", nullable: true),
-                    AttackDamage = table.Column<int>(type: "int", nullable: true),
-                    Hp = table.Column<int>(type: "int", nullable: true)
-
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.CardId });
-                    
-                });
-            migrationBuilder.CreateTable(
-               name: "Cards_Users",
-               columns: table => new
-               {
-                   CardsUsersId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                   CardId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                   Id = table.Column<string>(type: "nvarchar(450)", nullable: true)
-
-               },
-               constraints: table =>
-               {
-                   table.PrimaryKey("PK_AspNetUserTokens", x => new { x.CardId });
-                   table.ForeignKey(
-                       name: "FK_AspNetUserTokens_AspNetUsers_UserId12",
-                       column: x => x.Id,
-                       principalTable: "AspNetUsers",
-                       principalColumn: "Id",
-                       onDelete: ReferentialAction.Cascade);
-                   table.ForeignKey(
-                       name: "FK_AspNetUserTokens_AspNetUsers_UserId21",
-                       column: x => x.CardId,
-                       principalTable: "Cards",
-                       principalColumn: "CardId",
-                       onDelete: ReferentialAction.Cascade);
-
-               });
+          
             //    migrationBuilder.CreateTable(
             //      name: "MiastaUzytkownikow",
             //      columns: table => new
